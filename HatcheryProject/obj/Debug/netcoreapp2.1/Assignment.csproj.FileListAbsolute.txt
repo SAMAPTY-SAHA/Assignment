@@ -20,3 +20,5 @@ C:\Users\shohoz\Documents\GitHub\Assignment\obj\Debug\netcoreapp2.1\Assignment.A
 C:\Users\shohoz\Documents\GitHub\Assignment\obj\Debug\netcoreapp2.1\Assignment.AssemblyInfo.cs
 C:\Users\shohoz\Documents\GitHub\Assignment\obj\Debug\netcoreapp2.1\Assignment.dll
 C:\Users\shohoz\Documents\GitHub\Assignment\obj\Debug\netcoreapp2.1\Assignment.pdb
+C:\Users\shohoz\Documents\GitHub\Assignment\HatcheryProject\obj\Debug\netcoreapp2.1\Assignment.dll
+C:\Users\shohoz\Documents\GitHub\Assignment\HatcheryProject\obj\Debug\netcoreapp2.1\Assignment.pdb
