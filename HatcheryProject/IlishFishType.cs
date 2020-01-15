@@ -13,10 +13,10 @@ namespace Assignment
         {
 
         }
-        public IlishFishType(string katlaname, string katlaweight)
+        public IlishFishType(string ilishname, string ilishweight)
         {
-            this.Ilishname = Ilishname;
-            this.Ilishweight = Ilishweight;
+            this.Ilishname = ilishname;
+            this.Ilishweight = ilishweight;
         }
     }
 }

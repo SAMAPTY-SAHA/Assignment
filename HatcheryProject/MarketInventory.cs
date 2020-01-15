@@ -7,11 +7,20 @@ namespace Assignment
     class MarketInventory
     {
 
-        
+        //public static List<RuiFishType> ruifishList = new List<RuiFishType>();
+        //public static List<KatlaFishType> katlafishList = new List<KatlaFishType>();
+       // public static List<IlishFishType> IlishfishList = new List<IlishFishType>();
 
-        public static List<RuiFishType> ruifishList = new List<RuiFishType>();
-        public static List<KatlaFishType> katlafishList = new List<KatlaFishType>();
-        public static List<IlishFishType> IlishfishList = new List<IlishFishType>();
+        public static List<RuiFishType> ruifishListRepo = new List<RuiFishType>();
+        public static List<KatlaFishType> katlafishListRepo = new List<KatlaFishType>();
+        public static List<IlishFishType> ilishfishListRepo = new List<IlishFishType>();
+
+        RuiRepo ruirepo = new RuiRepo();
+        KatlaRepo katlarepo = new KatlaRepo();
+        IlishRepo ilishrepo = new IlishRepo();
+
+
+
 
 
 
@@ -30,7 +39,7 @@ namespace Assignment
         public int listIlish = 0;
         public int cnt3 = 0;
 
-
+        // rui list method addd
         public void ruifishListMethod()
         {
             for (int i = 1; i <= 100; i++)
@@ -38,10 +47,13 @@ namespace Assignment
                 string ruiname = "Rui";
                 String ruiweight = "3kg";
                 RuiFishType ruifishtype = new RuiFishType(ruiname, ruiweight);
-                ruifishList.Add(ruifishtype);
+                // ruifishList.Add(ruifishtype);
+                ruirepo.add(ruifishtype);
                 
             }
-            Console.WriteLine("rui fish method num : " + ruifishList.Count);
+            //Console.WriteLine("rui fish method num : " + ruifishList.Count);
+            Console.WriteLine("rui fish method num  repo : " + ruifishListRepo.Count);
+
         }
 
 
@@ -60,23 +72,29 @@ namespace Assignment
                  Rui = Rui + HatcheryInventory.hatcheryfish;
                  Console.WriteLine("MarketInventory Buy from Hatchery amount : " + Rui);
              }*/
-            int cnt = ruifishList.Count;
+            // int cnt = ruifishList.Count;
+
+            int cnt = ruifishListRepo.Count;
+
             //Console.WriteLine("Count : " + cnt);
-            listrui = ruifishList.Count - s.fishAmount;
+            listrui = ruifishListRepo.Count - s.fishAmount;
             //Console.WriteLine("Count : " + cnt + " " + "listui : " + listrui);
             
 
 
             for (int i = cnt-1 ; i >= (cnt - s.fishAmount); i--)
             {
-                ruifishList.RemoveAt(i);
+                // ruifishList.RemoveAt(i);
                 // Console.WriteLine("remove rui fish from list : " + i);
+                ruirepo.remove(i);
+
 
             }
-           
-            Console.WriteLine("Available in market inventory : " + ruifishList.Count);
 
-            
+            //Console.WriteLine("Available in market inventory : " + ruifishList.Count);
+            Console.WriteLine("Available in market inventory ruirepo : " + ruifishListRepo.Count);
+
+
             if (listrui<=50)
             {
                 //int temp = listrui + HatcheryInventory.hatcheryfishrui;
@@ -90,9 +108,12 @@ namespace Assignment
                     string ruiname = "Rui";
                     String ruiweight = "3kg";
                     RuiFishType ruifishtype = new RuiFishType(ruiname, ruiweight);
-                    ruifishList.Add(ruifishtype);
+                    //ruifishList.Add(ruifishtype);
+                    ruirepo.add(ruifishtype);
+
+
                 }
-                Console.WriteLine("New RUi COunt: "+ruifishList.Count);
+                Console.WriteLine("New RUi COunt: "+ruifishListRepo.Count);
                 
 
             }
@@ -107,29 +128,32 @@ namespace Assignment
                 string katlaname = "katla";
                 String katlaweight = "3kg";
                 KatlaFishType katlafishtype = new KatlaFishType(katlaname, katlaweight);
-                katlafishList.Add(katlafishtype);
+                //katlafishList.Add(katlafishtype);
+                katlarepo.add(katlafishtype);
             }
-            Console.WriteLine("katla fish list amount : " + katlafishList.Count);
+            Console.WriteLine("katla fish list amount : " + katlafishListRepo.Count);
         }
 
         public void SaleKatlaAmount(Object ob, Sales s)
         {
             
-            int cnt2 = katlafishList.Count;
+            int cnt2 = katlafishListRepo.Count;
             //Console.WriteLine("Count : " + cnt);
-            listrui = katlafishList.Count - s.fishAmount;
+            listkatla = katlafishListRepo.Count - s.fishAmount;
             //Console.WriteLine("Count : " + cnt + " " + "listui : " + listrui);
 
 
 
             for (int i = cnt2 - 1; i >= (cnt2 - s.fishAmount); i--)
             {
-                katlafishList.RemoveAt(i);
+                //katlafishList.RemoveAt(i);
+
+                katlarepo.remove(i);
                 // Console.WriteLine("remove rui fish from list : " + i);
 
             }
 
-            Console.WriteLine("Available in market inventory katla fish : " + katlafishList.Count);
+            Console.WriteLine("Available in market inventory katla fish : " + katlafishListRepo.Count);
 
 
             if (listkatla <= 50)
@@ -145,9 +169,10 @@ namespace Assignment
                     string ruiname = "Katlaui";
                     String ruiweight = "3kg";
                     KatlaFishType katlafishtype = new KatlaFishType(ruiname, ruiweight);
-                    katlafishList.Add(katlafishtype);
+                    //katlafishList.Add(katlafishtype);
+                    katlarepo.add(katlafishtype);
                 }
-                Console.WriteLine("New Katla COunt: " + katlafishList.Count);
+                Console.WriteLine("New Katla COunt: " + katlafishListRepo.Count);
 
 
             }
@@ -161,29 +186,30 @@ namespace Assignment
                 string Ilishname = "Iatla";
                 String Ilishweight = "3kg";
                 IlishFishType ilishfishtype = new IlishFishType(Ilishname, Ilishweight);
-                IlishfishList.Add(ilishfishtype);
+                //IlishfishList.Add(ilishfishtype);
+                ilishrepo.add(ilishfishtype);
             }
-            Console.WriteLine("Ilish fish list amount : " + IlishfishList.Count);
+            Console.WriteLine("Ilish fish list amount : " + ilishfishListRepo.Count);
         }
 
         public void SaleIlishAmount(Object ob, Sales s)
         {
 
-            int cnt3 = IlishfishList.Count;
+            int cnt3 = ilishfishListRepo.Count;
             //Console.WriteLine("Count : " + cnt);
-            listIlish = IlishfishList.Count - s.fishAmount;
+            listIlish = ilishfishListRepo.Count - s.fishAmount;
             //Console.WriteLine("Count : " + cnt + " " + "listui : " + listrui);
 
 
 
             for (int i = cnt3 - 1; i >= (cnt3 - s.fishAmount); i--)
             {
-                IlishfishList.RemoveAt(i);
+                ilishfishListRepo.RemoveAt(i);
                 // Console.WriteLine("remove rui fish from list : " + i);
 
             }
 
-            Console.WriteLine("Available in market inventory katla fish : " + IlishfishList.Count);
+            Console.WriteLine("Available in market inventory katla fish : " + ilishfishListRepo.Count);
 
 
             if (listIlish <= 50)
@@ -199,9 +225,10 @@ namespace Assignment
                     string Ilishname = "Katlaui";
                     String Ilishweight = "3kg";
                     IlishFishType Ilishfishtype = new IlishFishType(Ilishname, Ilishweight);
-                    IlishfishList.Add(Ilishfishtype);
+                    //IlishfishList.Add(Ilishfishtype);
+                    ilishrepo.add(Ilishfishtype);
                 }
-                Console.WriteLine("New Ilish COunt: " + IlishfishList.Count);
+                Console.WriteLine("New Ilish COunt: " + ilishfishListRepo.Count);
 
 
             }
