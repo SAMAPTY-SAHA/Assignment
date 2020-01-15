@@ -13,7 +13,7 @@ namespace Assignment
             //MarketInventory mi = new MarketInventory();
             HatcheryInventory hatcheryInventory = new HatcheryInventory();
 
-            mp.BuyEvent += hatcheryInventory.BuyAmount;
+            mp.BuyEvent += hatcheryInventory.BuyRuiAmountevent;
             mp.BuyMethod(saleFish);
 
         }

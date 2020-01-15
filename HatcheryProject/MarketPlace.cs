@@ -14,11 +14,14 @@ namespace Assignment
         public delegate void BuyDelegate(Object ob, Sales s);
         public event BuyDelegate BuyEvent;
 
+        StroreMarket storemarket = new StroreMarket();
+
 
 
         public void saleMethod(int amount)
         {
             OnSaleDelegateEvent(amount);
+           // storemarket.ruifishremove();
         }
 
         protected virtual void  OnSaleDelegateEvent(int fishAmount)

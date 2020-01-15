@@ -17,11 +17,19 @@ namespace Assignment
 
             //mp.SaleEvent += mi.SaleRuiAmount;
             //mp.saleMethod(fish);
+            MarketInventory mi = new MarketInventory();
+            //FishTank fishTank = new FishTank();
+
+            //Thread thread = new Thread(new ThreadStart(fishTank.generatefish));
+            //thread.Start();
+
+            mi.ruifishListMethod();
             while (true)
             {
 
                 User user = new User();
                 user.userNeed();
+
 
                
 
@@ -30,6 +38,7 @@ namespace Assignment
 
 
         }
+       
 
     }
 }

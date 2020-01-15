@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\shohoz\\Documents\\GitHub\\Assignment\\Assignment.csproj": {}
+    "C:\\Users\\shohoz\\Documents\\GitHub\\Assignment\\HatcheryProject\\Assignment.csproj": {}
   },
   "projects": {
-    "C:\\Users\\shohoz\\Documents\\GitHub\\Assignment\\Assignment.csproj": {
+    "C:\\Users\\shohoz\\Documents\\GitHub\\Assignment\\HatcheryProject\\Assignment.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\shohoz\\Documents\\GitHub\\Assignment\\Assignment.csproj",
+        "projectUniqueName": "C:\\Users\\shohoz\\Documents\\GitHub\\Assignment\\HatcheryProject\\Assignment.csproj",
         "projectName": "Assignment",
-        "projectPath": "C:\\Users\\shohoz\\Documents\\GitHub\\Assignment\\Assignment.csproj",
+        "projectPath": "C:\\Users\\shohoz\\Documents\\GitHub\\Assignment\\HatcheryProject\\Assignment.csproj",
         "packagesPath": "C:\\Users\\shohoz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\shohoz\\Documents\\GitHub\\Assignment\\obj\\",
+        "outputPath": "C:\\Users\\shohoz\\Documents\\GitHub\\Assignment\\HatcheryProject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
