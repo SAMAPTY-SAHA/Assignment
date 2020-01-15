@@ -24,6 +24,7 @@ namespace Assignment
             //thread.Start();
 
             mi.ruifishListMethod();
+            mi.katlafishListMethod();
             while (true)
             {
 

@@ -7,29 +7,10 @@ namespace Assignment
     class MarketInventory
     {
 
-        // public delegate void neededAmountFromHatcheryIn(int neededamount);
-        //public event neededAmountFromHatcheryIn neededAmountFromHatcheryEvent;
-        // List<RuiFishType> ruifishList = new List<RuiFishType>();
-
-            // for implement single ton pattern 
-            /*private MarketInventory()
-            {
-
-            }
-        private static MarketInventory instance = null;
-        public static MarketInventory Instance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    instance = new MarketInventory();
-                }
-                return instance;
-            }
-        }*/
+        
 
         public static List<RuiFishType> ruifishList = new List<RuiFishType>();
+        public static List<KatlaFishType> katlafishList = new List<KatlaFishType>();
 
 
 
@@ -37,13 +18,15 @@ namespace Assignment
 
 
 
-       // public static  int Rui = 1000;
+        // public static  int Rui = 1000;
         Hatvhery hatchery=new Hatvhery();
         HatcheryInventory hatcheryInventory = new HatcheryInventory();
         Sales s = new Sales();
         public  int listrui=0;
-        public int cnt = 0;
- 
+        public int cnt1 = 0;
+        public int listkatla = 0;
+        public int cnt2 = 0;
+
 
         public void ruifishListMethod()
         {
@@ -87,12 +70,7 @@ namespace Assignment
                 // Console.WriteLine("remove rui fish from list : " + i);
 
             }
-            //ruifishList.RemoveRange(listrui-1, cnt-1);
-
-
-
-
-            //Console.WriteLine("Available fish : " + listrui);
+           
             Console.WriteLine("Available in market inventory : " + ruifishList.Count);
 
             
@@ -115,9 +93,64 @@ namespace Assignment
                 
 
             }
-           // Console.WriteLine("New RUi COuntttttttt: " + ruifishList.Count);
+           
 
         }
-           
+
+        public void katlafishListMethod()
+        {
+            for (int i = 1; i <= 100; i++)
+            {
+                string katlaname = "katla";
+                String katlaweight = "3kg";
+                KatlaFishType katlafishtype = new KatlaFishType(katlaname, katlaweight);
+                katlafishList.Add(katlafishtype);
+            }
+            Console.WriteLine("katla fish list amount : " + katlafishList.Count);
+        }
+
+        public void SaleKatlaAmount(Object ob, Sales s)
+        {
+            
+            int cnt = katlafishList.Count;
+            //Console.WriteLine("Count : " + cnt);
+            listrui = katlafishList.Count - s.fishAmount;
+            //Console.WriteLine("Count : " + cnt + " " + "listui : " + listrui);
+
+
+
+            for (int i = cnt - 1; i >= (cnt - s.fishAmount); i--)
+            {
+                katlafishList.RemoveAt(i);
+                // Console.WriteLine("remove rui fish from list : " + i);
+
+            }
+
+            Console.WriteLine("Available in market inventory katla fish : " + katlafishList.Count);
+
+
+            if (listkatla <= 50)
+            {
+                //int temp = listrui + HatcheryInventory.hatcheryfishrui;
+                hatchery.BuyRuiAmount(s.fishAmount);
+                int temp = listkatla + HatcheryInventory.hatcheryfishkatla;
+
+                Console.WriteLine("Market Inventory Buy from hatchery amount : " + HatcheryInventory.hatcheryfishkatla);
+                Console.WriteLine("Now available in Marketinventory : " + temp);
+                for (int i = listkatla + 1; i <= temp; i++)
+                {
+                    string ruiname = "Katlaui";
+                    String ruiweight = "3kg";
+                    KatlaFishType katlafishtype = new KatlaFishType(ruiname, ruiweight);
+                    katlafishList.Add(katlafishtype);
+                }
+                Console.WriteLine("New Katla COunt: " + katlafishList.Count);
+
+
+            }
+
+
+        }
+
     }
 }

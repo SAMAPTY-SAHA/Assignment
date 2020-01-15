@@ -7,6 +7,7 @@ namespace Assignment
     class User
     {
           int fish;
+        int katlaFish;
         Hatvhery hatchery=new Hatvhery();
         StroreMarket storemarket = new StroreMarket();
         //int count = 0;
@@ -16,12 +17,13 @@ namespace Assignment
         public void userNeed()
         {
            
-            Console.WriteLine("Sale amount : ");
-            fish = Convert.ToInt32(Console.ReadLine());
+            
             Console.WriteLine("option select : ");
             int option;
             option = Convert.ToInt32(Console.ReadLine());
             //int count = 0;
+
+           
 
 
             MarketPlace mp = new MarketPlace();
@@ -39,6 +41,8 @@ namespace Assignment
 
 
                 //MarketInventory.Instance.ruifishListMethod();
+                Console.WriteLine("Sale amount : ");
+                fish = Convert.ToInt32(Console.ReadLine());
 
                 mp.SaleEvent += mi.SaleRuiAmount;
                 //mp.SaleEvent += MarketInventory.Instance.SaleRuiAmount;
@@ -49,13 +53,11 @@ namespace Assignment
 
             if (option == 2)
             {
-                //mp.SaleEvent += mi.SaleRuiAmount;
-                //mp.saleMethod(fish);
-                //hatchery.BuyRuiAmount(fish);
+                Console.WriteLine("Sale amount : ");
+                katlaFish = Convert.ToInt32(Console.ReadLine());
+                mp.SaleEvent += mi.SaleKatlaAmount;
+                mp.saleMethod(katlaFish);
 
-                //storemarket.katlafishListMethod();
-                //mp.SaleEvent += storemarket.katlafishremove;
-               // mp.saleMethod(fish);
             }
         
     }

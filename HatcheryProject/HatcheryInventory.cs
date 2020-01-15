@@ -7,10 +7,11 @@ namespace Assignment
 {
     class HatcheryInventory
     {
-        public static  int hatcheryfish = 1000;
+       // public static  int hatcheryfish = 1000;
         FishTank fishTank = new FishTank();
 
         public static int hatcheryfishrui = 1000;
+        public static int hatcheryfishkatla = 1000;
 
 
 
@@ -30,14 +31,27 @@ namespace Assignment
 
             Console.WriteLine("Available in  hatchery : "+ hatcheryfishrui);
             fishTank.getFish(hatcheryfishrui);
-            /*Thread thread = new Thread(new ThreadStart(fishTank.generatefish));
-           thread.Start();*/
-            
-
-            // fishTank.generatefish(s.fishAmount);
+           
         }
 
-       
+        public void BuyKatlaAmountevent(Object ob, Sales s)
+        {
+
+            hatcheryfishkatla = hatcheryfishkatla - s.fishAmount;
+            ///*hatcheryfish = hatcheryfish - MarketInventory.Rui;
+
+            if (hatcheryfishkatla <= 0)
+            {
+                hatcheryfishkatla = hatcheryfishkatla + FishTank.fishtankfishamountkatla;
+                Console.WriteLine(" hatchery Buy from fishtank : " + hatcheryfishkatla);
+            }
+
+            Console.WriteLine("Available in  hatchery : " + hatcheryfishkatla);
+            fishTank.getFish(hatcheryfishkatla);
+
+        }
+
+
     }
 
 }
