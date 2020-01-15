@@ -12,6 +12,9 @@ namespace Assignment
         public int fishfromHatchery;
         public static int fishtankfishamountkatla = 1200;
         public int fishfromHatcherykatla;
+
+        public static int fishtankfishamountilish = 1200;
+        public int fishfromHatcheryilish;
         public void getFish(int f)
         {
             fishfromHatchery = f;
@@ -30,7 +33,7 @@ namespace Assignment
             if (fishtankfishamount<=300)
             {                   
                 fishtankfishamount = 1000;
-                Console.WriteLine("Auto generated: "+fishtankfishamount);
+                Console.WriteLine("Auto generated Rui : "+fishtankfishamount);
             }
 
         }
@@ -52,10 +55,32 @@ namespace Assignment
             if (fishtankfishamountkatla <= 300)
             {
                 fishtankfishamountkatla = 1000;
-                Console.WriteLine("Auto generated: " + fishtankfishamountkatla);
+                Console.WriteLine("Auto generated katla : " + fishtankfishamountkatla);
             }
 
         }
+        public void getilishFish(int f)
+        {
+            fishfromHatcheryilish = f;
+            Console.WriteLine("get fish " + fishfromHatcherykatla);
+            Thread thread = new Thread(new ThreadStart(generateilishfish));
+            thread.Start();
+
+        }
+        public void generateilishfish()
+        {
+            Thread.Sleep(3000);
+
+            fishtankfishamountilish = fishtankfishamountilish - fishfromHatcheryilish;
+            Console.WriteLine("fish tank fish amount :" + fishtankfishamountkatla);
+            if (fishtankfishamountilish <= 300)
+            {
+                fishtankfishamountilish = 1000;
+                Console.WriteLine("Auto generated Ilish : " + fishtankfishamountilish);
+            }
+
+        }
+
 
 
     }

@@ -25,6 +25,7 @@ namespace Assignment
 
             mi.ruifishListMethod();
             mi.katlafishListMethod();
+            mi.IlishfishListMethod();
             while (true)
             {
 

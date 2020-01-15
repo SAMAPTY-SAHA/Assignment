@@ -7,7 +7,8 @@ namespace Assignment
     class User
     {
           int fish;
-        int katlaFish;
+          int katlaFish;
+        int IlishFish;
         Hatvhery hatchery=new Hatvhery();
         StroreMarket storemarket = new StroreMarket();
         //int count = 0;
@@ -31,36 +32,36 @@ namespace Assignment
 
             if (option == 1)
             {
-                //mp.SaleEvent += mi.SaleRuiAmount;
-                //mp.saleMethod(fish);
-                //hatchery.BuyRuiAmount(fish);
-                //count++;
-                // Console.WriteLine("Cout : " + count);
-
-                // mi.ruifishListMethod();
-
-
-                //MarketInventory.Instance.ruifishListMethod();
-                Console.WriteLine("Sale amount : ");
+                
+                Console.WriteLine("Rui Fish sale amount : ");
                 fish = Convert.ToInt32(Console.ReadLine());
 
                 mp.SaleEvent += mi.SaleRuiAmount;
-                //mp.SaleEvent += MarketInventory.Instance.SaleRuiAmount;
                 mp.saleMethod(fish);
 
 
             }
 
-            if (option == 2)
+            else if (option == 2)
             {
-                Console.WriteLine("Sale amount : ");
+                Console.WriteLine("Katla fish sale amount : ");
                 katlaFish = Convert.ToInt32(Console.ReadLine());
                 mp.SaleEvent += mi.SaleKatlaAmount;
                 mp.saleMethod(katlaFish);
 
             }
-        
-    }
+            else if (option == 3)
+            {
+                Console.WriteLine("Ilish fish sale amount : ");
+                IlishFish = Convert.ToInt32(Console.ReadLine());
+                mp.SaleEvent += mi.SaleIlishAmount;
+                mp.saleMethod(IlishFish);
+
+            }
+
+
+
+        }
 
 
         

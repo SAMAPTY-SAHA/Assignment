@@ -28,6 +28,17 @@ namespace Assignment
             mp.BuyMethod(saleFish);
 
         }
+        public void BuyIlishAmount(int saleFish)
+        {
+
+            MarketPlace mp = new MarketPlace();
+            //MarketInventory mi = new MarketInventory();
+            HatcheryInventory hatcheryInventory = new HatcheryInventory();
+
+            mp.BuyEvent += hatcheryInventory.BuyIlishAmountevent;
+            mp.BuyMethod(saleFish);
+
+        }
 
 
 

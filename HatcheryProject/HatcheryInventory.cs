@@ -12,6 +12,7 @@ namespace Assignment
 
         public static int hatcheryfishrui = 1000;
         public static int hatcheryfishkatla = 1000;
+        public static int hatcheryfishilish = 1000;
 
 
 
@@ -47,7 +48,23 @@ namespace Assignment
             }
 
             Console.WriteLine("Available in  hatchery : " + hatcheryfishkatla);
-            fishTank.getFish(hatcheryfishkatla);
+            fishTank.getkatlaFish(hatcheryfishkatla);
+
+        }
+        public void BuyIlishAmountevent(Object ob, Sales s)
+        {
+
+            hatcheryfishilish = hatcheryfishilish - s.fishAmount;
+            ///*hatcheryfish = hatcheryfish - MarketInventory.Rui;
+
+            if (hatcheryfishilish <= 0)
+            {
+                hatcheryfishilish = hatcheryfishilish + FishTank.fishtankfishamountilish;
+                Console.WriteLine(" hatchery Buy from fishtank : " + hatcheryfishilish);
+            }
+
+            Console.WriteLine("Available in  hatchery Ilish : " + hatcheryfishilish);
+            fishTank.getilishFish(hatcheryfishilish);
 
         }
 
