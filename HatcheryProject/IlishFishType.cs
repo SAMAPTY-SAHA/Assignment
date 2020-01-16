@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Assignment
 {
-    class IlishFishType
+    class IlishFishType : Fish
     {
         public string Ilishname;
         public string Ilishweight;

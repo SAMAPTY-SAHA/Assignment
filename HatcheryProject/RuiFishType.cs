@@ -4,19 +4,25 @@ using System.Text;
 
 namespace Assignment
 {
-    class RuiFishType
+    class RuiFishType : Fish
     {
         public string ruiname;
         public string ruiweight;
-        RuiFishType()
-        {
 
-        }
-        public RuiFishType(string ruiname,string ruiweight)
+        public RuiFishType(string ruiname, string ruiweight)
         {
             this.ruiname = ruiname;
             this.ruiweight = ruiweight;
         }
+        /*RuiFishType()
+{
+
+}
+public RuiFishType(string ruiname,string ruiweight)
+{
+   this.ruiname = ruiname;
+   this.ruiweight = ruiweight;
+}*/
 
     }
 }

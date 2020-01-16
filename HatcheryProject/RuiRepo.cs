@@ -9,11 +9,8 @@ namespace Assignment
        // public static List<RuiFishType> ruifishList = new List<RuiFishType>();
         public void add(RuiFishType ruiFishType )
         {
-
-           
                 MarketInventory.ruifishListRepo.Add(ruiFishType);
-            
-                      
+                               
         }
 
         public List<RuiFishType> getRuiall()

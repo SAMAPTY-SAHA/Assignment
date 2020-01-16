@@ -15,9 +15,14 @@ namespace Assignment
         public static List<KatlaFishType> katlafishListRepo = new List<KatlaFishType>();
         public static List<IlishFishType> ilishfishListRepo = new List<IlishFishType>();
 
-        RuiRepo ruirepo = new RuiRepo();
-        KatlaRepo katlarepo = new KatlaRepo();
-        IlishRepo ilishrepo = new IlishRepo();
+        // GenericRepository<Fish> GR = new GenericRepository<Fish>();
+        GenericRepository<RuiFishType> GRRui = new GenericRepository<RuiFishType>();
+        GenericRepository<KatlaFishType> GRKatla = new GenericRepository<KatlaFishType>();
+        GenericRepository<IlishFishType> GRIlish = new GenericRepository<IlishFishType>();
+
+        //  RuiRepo ruirepo = new RuiRepo();
+        // KatlaRepo katlarepo = new KatlaRepo();
+        //IlishRepo ilishrepo = new IlishRepo();
 
 
 
@@ -48,7 +53,8 @@ namespace Assignment
                 String ruiweight = "3kg";
                 RuiFishType ruifishtype = new RuiFishType(ruiname, ruiweight);
                 // ruifishList.Add(ruifishtype);
-                ruirepo.add(ruifishtype);
+                //ruirepo.add(ruifishtype);
+                GRRui.add(ruifishtype);
                 
             }
             //Console.WriteLine("rui fish method num : " + ruifishList.Count);
@@ -86,7 +92,8 @@ namespace Assignment
             {
                 // ruifishList.RemoveAt(i);
                 // Console.WriteLine("remove rui fish from list : " + i);
-                ruirepo.remove(i);
+                //ruirepo.remove(i);
+                GRRui.remove("rui",i);
 
 
             }
@@ -109,7 +116,8 @@ namespace Assignment
                     String ruiweight = "3kg";
                     RuiFishType ruifishtype = new RuiFishType(ruiname, ruiweight);
                     //ruifishList.Add(ruifishtype);
-                    ruirepo.add(ruifishtype);
+                    //ruirepo.add(ruifishtype);
+                    GRRui.add(ruifishtype);
 
 
                 }
@@ -129,7 +137,8 @@ namespace Assignment
                 String katlaweight = "3kg";
                 KatlaFishType katlafishtype = new KatlaFishType(katlaname, katlaweight);
                 //katlafishList.Add(katlafishtype);
-                katlarepo.add(katlafishtype);
+                //katlarepo.add(katlafishtype);
+                GRKatla.add(katlafishtype);
             }
             Console.WriteLine("katla fish list amount : " + katlafishListRepo.Count);
         }
@@ -148,8 +157,9 @@ namespace Assignment
             {
                 //katlafishList.RemoveAt(i);
 
-                katlarepo.remove(i);
+                //katlarepo.remove(i);
                 // Console.WriteLine("remove rui fish from list : " + i);
+                GRKatla.remove("katla", i);
 
             }
 
@@ -170,7 +180,8 @@ namespace Assignment
                     String ruiweight = "3kg";
                     KatlaFishType katlafishtype = new KatlaFishType(ruiname, ruiweight);
                     //katlafishList.Add(katlafishtype);
-                    katlarepo.add(katlafishtype);
+                    // katlarepo.add(katlafishtype);
+                    GRKatla.add(katlafishtype);
                 }
                 Console.WriteLine("New Katla COunt: " + katlafishListRepo.Count);
 
@@ -187,7 +198,8 @@ namespace Assignment
                 String Ilishweight = "3kg";
                 IlishFishType ilishfishtype = new IlishFishType(Ilishname, Ilishweight);
                 //IlishfishList.Add(ilishfishtype);
-                ilishrepo.add(ilishfishtype);
+                // ilishrepo.add(ilishfishtype);
+                GRIlish.add(ilishfishtype);
             }
             Console.WriteLine("Ilish fish list amount : " + ilishfishListRepo.Count);
         }
@@ -204,8 +216,9 @@ namespace Assignment
 
             for (int i = cnt3 - 1; i >= (cnt3 - s.fishAmount); i--)
             {
-                ilishfishListRepo.RemoveAt(i);
+                //ilishfishListRepo.RemoveAt(i);
                 // Console.WriteLine("remove rui fish from list : " + i);
+                GRIlish.remove("ilish", i);
 
             }
 
@@ -226,7 +239,8 @@ namespace Assignment
                     String Ilishweight = "3kg";
                     IlishFishType Ilishfishtype = new IlishFishType(Ilishname, Ilishweight);
                     //IlishfishList.Add(Ilishfishtype);
-                    ilishrepo.add(Ilishfishtype);
+                    //ilishrepo.add(Ilishfishtype);
+                    GRIlish.add(Ilishfishtype);
                 }
                 Console.WriteLine("New Ilish COunt: " + ilishfishListRepo.Count);
 
