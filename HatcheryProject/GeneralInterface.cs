@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
@@ -8,7 +9,7 @@ namespace Assignment
     {
         void add(T obj);
 
-        List<RuiFishType> getRuiall();
+        List<T> getall();
 
         void remove(String objname,int x);
     }

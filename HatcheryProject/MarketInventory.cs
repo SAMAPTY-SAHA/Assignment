@@ -58,7 +58,8 @@ namespace Assignment
                 
             }
             //Console.WriteLine("rui fish method num : " + ruifishList.Count);
-            Console.WriteLine("rui fish method num  repo : " + ruifishListRepo.Count);
+            //  Console.WriteLine("rui fish method num  repo : " + ruifishListRepo.Count);
+            Console.WriteLine("rui fish method num  repo : " + GRRui.getall().Count);
 
         }
 
@@ -80,10 +81,11 @@ namespace Assignment
              }*/
             // int cnt = ruifishList.Count;
 
-            int cnt = ruifishListRepo.Count;
+            //int cnt = ruifishListRepo.Count;
+            int cnt = GRRui.getall().Count;
 
             //Console.WriteLine("Count : " + cnt);
-            listrui = ruifishListRepo.Count - s.fishAmount;
+            listrui = GRRui.getall().Count - s.fishAmount;
             //Console.WriteLine("Count : " + cnt + " " + "listui : " + listrui);
             
 
@@ -99,7 +101,7 @@ namespace Assignment
             }
 
             //Console.WriteLine("Available in market inventory : " + ruifishList.Count);
-            Console.WriteLine("Available in market inventory ruirepo : " + ruifishListRepo.Count);
+            Console.WriteLine("Available in market inventory ruirepo : " + GRRui.getall().Count);
 
 
             if (listrui<=50)
@@ -121,7 +123,7 @@ namespace Assignment
 
 
                 }
-                Console.WriteLine("New RUi COunt: "+ruifishListRepo.Count);
+                Console.WriteLine("New RUi COunt: "+ GRRui.getall().Count);
                 
 
             }
@@ -140,15 +142,16 @@ namespace Assignment
                 //katlarepo.add(katlafishtype);
                 GRKatla.add(katlafishtype);
             }
-            Console.WriteLine("katla fish list amount : " + katlafishListRepo.Count);
+            // Console.WriteLine("katla fish list amount : " + katlafishListRepo.Count);
+            Console.WriteLine("katla fish list amount : " + GRKatla.getall().Count);
         }
 
         public void SaleKatlaAmount(Object ob, Sales s)
         {
             
-            int cnt2 = katlafishListRepo.Count;
+            int cnt2 = GRKatla.getall().Count;
             //Console.WriteLine("Count : " + cnt);
-            listkatla = katlafishListRepo.Count - s.fishAmount;
+            listkatla = GRKatla.getall().Count - s.fishAmount;
             //Console.WriteLine("Count : " + cnt + " " + "listui : " + listrui);
 
 
@@ -163,7 +166,7 @@ namespace Assignment
 
             }
 
-            Console.WriteLine("Available in market inventory katla fish : " + katlafishListRepo.Count);
+            Console.WriteLine("Available in market inventory katla fish : " + GRKatla.getall().Count);
 
 
             if (listkatla <= 50)
@@ -183,7 +186,7 @@ namespace Assignment
                     // katlarepo.add(katlafishtype);
                     GRKatla.add(katlafishtype);
                 }
-                Console.WriteLine("New Katla COunt: " + katlafishListRepo.Count);
+                Console.WriteLine("New Katla COunt: " + GRKatla.getall().Count);
 
 
             }
@@ -201,15 +204,15 @@ namespace Assignment
                 // ilishrepo.add(ilishfishtype);
                 GRIlish.add(ilishfishtype);
             }
-            Console.WriteLine("Ilish fish list amount : " + ilishfishListRepo.Count);
+            Console.WriteLine("Ilish fish list amount : " + GRIlish.getall().Count);
         }
 
         public void SaleIlishAmount(Object ob, Sales s)
         {
 
-            int cnt3 = ilishfishListRepo.Count;
+            int cnt3 = GRIlish.getall().Count;
             //Console.WriteLine("Count : " + cnt);
-            listIlish = ilishfishListRepo.Count - s.fishAmount;
+            listIlish = GRIlish.getall().Count - s.fishAmount;
             //Console.WriteLine("Count : " + cnt + " " + "listui : " + listrui);
 
 
@@ -222,7 +225,7 @@ namespace Assignment
 
             }
 
-            Console.WriteLine("Available in market inventory katla fish : " + ilishfishListRepo.Count);
+            Console.WriteLine("Available in market inventory katla fish : " + GRIlish.getall().Count);
 
 
             if (listIlish <= 50)
@@ -242,7 +245,7 @@ namespace Assignment
                     //ilishrepo.add(Ilishfishtype);
                     GRIlish.add(Ilishfishtype);
                 }
-                Console.WriteLine("New Ilish COunt: " + ilishfishListRepo.Count);
+                Console.WriteLine("New Ilish COunt: " + GRIlish.getall().Count);
 
 
             }
